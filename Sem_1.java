@@ -4,8 +4,12 @@ import java.util.Scanner;
 
 public class Sem_1 {
     public static void main(String[] args) {
-        task4();
+
+        task2();
+
     }
+
+
 // Необходимо написать алгоритм, считающий сумму всех чисел от 1 до N. 
     public static void task1(){ // O(n/2) == O(n) == O(2n)
         Scanner sc = new Scanner(System.in);
