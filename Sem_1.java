@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Sem_1 {
     public static void main(String[] args) {
 
-        task2();
+        task3();
 
     }
 
@@ -53,11 +53,11 @@ public class Sem_1 {
     public static void task3(){
         int count = 4;
         int faces = 200;
-        // Date startData = new Date(System.currentTimeMillis());
+        Date startDate = new Date(System.currentTimeMillis());
         System.out.println(recursiveCount(1, count, faces));
-        // Date endData = new Date(System.currentTimeMillis());
-        // Long chislo = startData.getTime() - endData.getTime();
-        // System.out.println(chislo);
+        Date endDate = new Date(System.currentTimeMillis());
+        Long chislo = endDate.getTime() - startDate.getTime();
+        System.out.println(chislo);
     }
 
     public static int recursiveCount(int countNow, int maxCount, int faces){ // O(k^n)
