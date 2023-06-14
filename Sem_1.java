@@ -106,7 +106,7 @@ public class Sem_1 {
             return 1;
         }
         else{
-            return fb(num-1) + fb(num -2);
+            return fb(num-1) + fb(num -2); // 2 - потому что две функции вызываются
         }
     }
 
