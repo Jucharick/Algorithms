@@ -6,10 +6,10 @@ public class Sem_1 {
     public static void main(String[] args) {
         task4();
     }
-// РќРµРѕР±С…РѕРґРёРјРѕ РЅР°РїРёСЃР°С‚СЊ Р°Р»РіРѕСЂРёС‚Рј, СЃС‡РёС‚Р°СЋС‰РёР№ СЃСѓРјРјСѓ РІСЃРµС… С‡РёСЃРµР» РѕС‚ 1 РґРѕ N. 
+// Необходимо написать алгоритм, считающий сумму всех чисел от 1 до N. 
     public static void task1(){ // O(n/2) == O(n) == O(2n)
         Scanner sc = new Scanner(System.in);
-        System.out.print("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ N: ");
+        System.out.print("Введите число N: ");
         int n = sc.nextInt();
         int sum = 0;
         for (int i = 1; i <= n; i++) {
@@ -19,7 +19,7 @@ public class Sem_1 {
         sc.close();
     }
 
-    // РќРµРѕР±С…РѕРґРёРјРѕ РІС‹РІРµСЃС‚Рё РІСЃРµ РїСЂРѕСЃС‚С‹Рµ С‡РёСЃР»Р° РѕС‚ 2 Р”Рѕ N.
+    // Необходимо вывести все простые числа от 2 До N.
     public static void task2(){ //O(n^2) + O(n) = O(n^2)
         int n = 1000;
         boolean flag;
@@ -40,9 +40,9 @@ public class Sem_1 {
     }
 
 
-    // РќРµРѕР±С…РѕРґРёРјРѕ РЅР°РїРёСЃР°С‚СЊ Р°Р»РіРѕСЂРёС‚Рј РїРѕРёСЃРєР° РІСЃРµС… РґРѕСЃС‚СѓРїРЅС‹С… РєРѕРјР±РёРЅР°С†РёР№ 
-    // (РїРѕСЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ) 
-    // РґР»СЏ РєРѕР»РёС‡РµСЃС‚РІР° РєСѓР±РёРєРѕРІ K СЃ РєРѕР»РёС‡РµСЃС‚РІРѕРј РіСЂР°РЅРµР№ N
+    // Необходимо написать алгоритм поиска всех доступных комбинаций 
+    // (посчитать количество) 
+    // для количества кубиков K с количеством граней N
     // 1 2 3 4 5 6
     // 4 3 2 1 1 1
 
@@ -78,22 +78,22 @@ public class Sem_1 {
         return count;
     }
 
-    // РџРёС€РµРј Р°Р»РіРѕСЂРёС‚Рј РїРѕРёСЃРєР° РЅСѓР¶РЅРѕРіРѕ С‡РёСЃР»Р° РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё Р¤РёР±РѕРЅР°С‡С‡Рё. 
-    // РЎС‡РёС‚Р°РµРј, С‡С‚Рѕ 1 Рё 2 Р·РЅР°С‡РµРЅРёСЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё СЂР°РІРЅС‹ 1
+    // Пишем алгоритм поиска нужного числа последовательности Фибоначчи. 
+    // Считаем, что 1 и 2 значения последовательности равны 1
     public static void task4(){
         int n = 50;
         Date startData = new Date(System.currentTimeMillis());
         System.out.println(fb(n));
         Date endData = new Date(System.currentTimeMillis());
         Long chislo = endData.getTime() - startData.getTime();
-        System.out.println("Р’СЂРµРјСЏ РёСЃРїРѕР»РЅРµРЅРёСЏ: " + chislo);
+        System.out.println("Время исполнения: " + chislo);
 
 
         Date startData2 = new Date(System.currentTimeMillis());
         System.out.println(fb2(n));
         Date endData2 = new Date(System.currentTimeMillis());
         Long chislo2 = endData2.getTime() - startData2.getTime();
-        System.out.println("Р’СЂРµРјСЏ РёСЃРїРѕР»РЅРµРЅРёСЏ: " + chislo2);
+        System.out.println("Время исполнения: " + chislo2);
         // 1 1 2 3
     }
     public static int fb(int num){ //O(2^n)
