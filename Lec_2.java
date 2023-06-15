@@ -36,8 +36,9 @@ public class Lec_2 {
 
     System.out.println();
 
-    int findValue = 16;
+    int findValue = 5;
     System.out.println("Искомый индекс: " + findIndex(findValue, array));
+    System.out.println("Искомый индекс: " + binarySearch(findValue, array, 0, array.length-1));
   }
   
 
@@ -98,5 +99,32 @@ public class Lec_2 {
       }
     }
     return -1;
+  }
+
+
+  //   Бинарный поиск - тип поискового алгоритма, который последовательно
+  // делит пополам заранее ОТСОРТИРОВАННЫЙ массив данных, чтобы обнаружить
+  // нужный элемент. Другие его названия — двоичный поиск, метод половинного
+  // деления, дихотомия. Принцип работы алгоритма бинарного поиска. Основная
+  // последовательность действий алгоритма выглядит так: Сортируем массив
+  // данных. Делим его пополам и находим середину.
+
+  // Бинарный поиск (сложность поиска O(log n))
+  public static int binarySearch(int value, int[] array, int min, int max) {
+    int midpoint;
+    if (min > max) {
+      return -1;
+    } else {
+      midpoint = (max - min)/2 + min;
+    }
+    if (array[midpoint] < value) {
+      return binarySearch(value, array, midpoint + 1, max);
+    } else {
+      if (array[midpoint] > value) {
+      return binarySearch(value, array, min, midpoint - 1);
+      } else {
+        return midpoint;
+      }
+    }
   }
 }
