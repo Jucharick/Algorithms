@@ -14,7 +14,6 @@ public class Lec_2 {
   public static void main(String[] args) {
     int[] array = new int[] {1,4,7,9,4,2,16,5,7,9,3};
     bubbleSort(array);
-
     for (int i = 0; i < array.length; i++) {
       System.out.print(array[i] + " ");
     }
@@ -23,14 +22,26 @@ public class Lec_2 {
 
     int[] array2 = new int[] {11,34,5,1,4,7,9,4,2,16,5,7,9,3};
     directSort(array2);
-
     for (int i = 0; i < array2.length; i++) {
       System.out.print(array2[i] + " ");
     }
+
+    System.out.println();
+
+    int[] array3 = new int[] {11,34,5,2,16,5,7,9,3};
+    insterSort(array3);
+    for (int i = 0; i < array3.length; i++) {
+      System.out.print(array2[i] + " ");
+    }
+
+    System.out.println();
+
+    int findValue = 16;
+    System.out.println("Искомый индекс: " + findIndex(findValue, array));
   }
   
 
-  // сортировка пузырьком (не самая оптимальная, сложность O(n^2) высокая)
+  // Сортировка пузырьком (не самая оптимальная, сложность O(n^2) высокая)
   public static void bubbleSort(int[] array) { // O(n) - если уже отсортирован, O(n^2) - если самый маленький элемент в конце массива (пройдемся по нему n раз)
     boolean finishSort;
     do {
@@ -47,7 +58,7 @@ public class Lec_2 {
   }
 
 
-  // Сортировка выбором (сложность поиска O(n^2), но технически кол-во операций будет меньше, чем у пузырьковой сортировки)
+  // Сортировка выбором (сложность O(n^2), но технически кол-во операций будет меньше, чем у пузырьковой сортировки)
   public static void directSort(int[] array) {
      for (int i = 0; i < array.length; i++) {
       int minPosition = i;
@@ -62,5 +73,30 @@ public class Lec_2 {
         array[minPosition] = temp;
       }
      }
+  }
+
+
+  // Сортировка вставками (сложность O(n^2), но технически кол-во операций будет меньше, чем у пузырьковой сортировки, но больше, чем у сортировки вставками)
+  public static void insterSort(int[] array) {
+     for (int i = 0; i < array.length; i++) {
+      for (int j = i + 1; j < array.length; j++) {
+        if (array[j] < array [i]) {
+          int temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+      }
+     }
+  }
+
+
+  // Алгоритмы поиска. Простой перебор (сложность поиска O(n)
+  public static int findIndex(int value, int[] array) {
+    for (int i = 0; i < array.length; i++) {
+      if (array[i] == value) {
+        return i;
+      }
+    }
+    return -1;
   }
 }
