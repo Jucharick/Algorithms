@@ -218,7 +218,7 @@ public class Lec_2 {
     }
   }
 
-  public static void heapify(int[] array, int heapSize, int rootIndex) {
+  private static void heapify(int[] array, int heapSize, int rootIndex) {
     int largest = rootIndex; // инициализируем самый большой элемент как корень
     int leftChild = 2 * rootIndex + 1; // левый  2*rootIndex + 1
     int rightChild = 2 * rootIndex + 2; // правый  2*rootIndex + 2
