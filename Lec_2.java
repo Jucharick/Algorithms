@@ -31,7 +31,7 @@ public class Lec_2 {
     int[] array3 = new int[] {11,34,5,2,16,5,7,9,3};
     insterSort(array3);
     for (int i = 0; i < array3.length; i++) {
-      System.out.print(array2[i] + " ");
+      System.out.print(array3[i] + " ");
     }
 
     System.out.println();
@@ -39,6 +39,12 @@ public class Lec_2 {
     int findValue = 5;
     System.out.println("Искомый индекс: " + findIndex(findValue, array));
     System.out.println("Искомый индекс: " + binarySearch(findValue, array, 0, array.length-1));
+
+    int[] array4 = new int[] {35, 1, 22, 11,34,5,2,16,5,7,9,3};
+    quickSort(array4, 0, array4.length-1);
+    for (int i = 0; i < array4.length; i++) {
+      System.out.print(array4[i] + " ");
+    }
   }
   
 
@@ -91,7 +97,7 @@ public class Lec_2 {
   }
 
 
-  // Алгоритмы поиска. Простой перебор (сложность поиска O(n)
+  // Алгоритмы поиска. Простой перебор (сложность поиска O(n))
   public static int findIndex(int value, int[] array) {
     for (int i = 0; i < array.length; i++) {
       if (array[i] == value) {
@@ -125,6 +131,53 @@ public class Lec_2 {
       } else {
         return midpoint;
       }
+    }
+  }
+
+
+  // Продвинутые алгоритмы сортировки
+
+
+  // Суть быстрой сортировки – разделить массив на 2
+  // части таким образом, чтобы справа все числа были больше, чем слева, при этом их
+  // порядок относительно друг друга не важен. И далее этот же подход будет применяться 
+  // для каждой из получившихся частей, равно как предусматривает принцип «разделяй и властвуй». 
+  // При этом, в отличии от бинарного поиска, количество операций в момент разделения не
+  // константное, а линейное – необходимо сравнить все элементы правой и левой
+  // части с неким эталоном и при необходимо – поменять их местами. В данном
+  // алгоритме такой элемент называется пивотом.
+  // Пивот - от английского поворот (pivot).
+
+  // Быстрая сортировка (quicksort) - сложность O(n log n), но если мы пытаемся отсортировать уже отсортированный массив пивотом 
+  // будет элемент с индексом 0, то сложность сортировки будет O(n^2), т.к. нам придется перебрать весь массив
+   public static void quickSort(int[] array, int startPos, int endPos) {
+    int leftPos = startPos;
+    int rightPos = endPos;
+    int pivot = array[(startPos + endPos)/2];
+    do {
+      while (array[leftPos] < pivot) {
+        leftPos++;
+      }
+      while (array[rightPos] > pivot) {
+        rightPos--;
+      }
+      if (leftPos <=rightPos) {
+        if (leftPos < rightPos) {
+          int temp = array[leftPos];
+          array[leftPos] = array[rightPos];
+          array[rightPos] = temp;
+        }
+        leftPos++;
+        rightPos--;
+      }
+      
+    } while (leftPos <= rightPos);
+
+    if (leftPos < endPos) {
+      quickSort(array, leftPos, endPos);
+    }
+    if (startPos < rightPos) {
+      quickSort(array, startPos, rightPos);
     }
   }
 }
