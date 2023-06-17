@@ -19,12 +19,12 @@ public class Sem_2 {
     System.out.println(Duration.between(timeQuickSortStart, timeQuickSortEnd));
 
     System.out.println(Duration.between(timeInsertSortStart, timeInsertSortEnd));
-    }
+  }
 
 
     public static void quickSort(int[] array) {
       quickSortRecursive(array, 0, array.length - 1);
-    }
+  }
 
   public static void quickSortRecursive(int[] array, int leftBorder, int rightBorder) {
     int leftMarker = leftBorder;
