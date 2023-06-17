@@ -17,9 +17,20 @@ public class Lec_3 {
   private Node head;
   private Node tail;
 
+public Node findNode(int value) { // сложность  O(n)
+  Node currentNode = head;
+  while (currentNode.nextNode != null) {
+    currentNode = currentNode.nextNode;
+    if (currentNode.value == value) {
+      return currentNode;
+    }
+  }
+  return null;
+}
+
   class Node { // Node - классическое название для подобных структур
     private int value;
-    private Node nexNode;
+    private Node nextNode;
     private Node previousNode;
   }
 }
