@@ -13,9 +13,6 @@ public class HW_2 {
     System.out.println(Arrays.toString(array));
   }
 
-
-
-
   // Сортировка кучей (пирамидальная)
   public static void heapSort(int[] array) {
     // построение кучи (перегруппируем массив)
