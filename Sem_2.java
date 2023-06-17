@@ -1,6 +1,5 @@
 import java.time.Duration;
 import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Sem_2 {
