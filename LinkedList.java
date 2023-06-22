@@ -10,10 +10,10 @@ public class LinkedList {
             return;
         }
         Node currentNode = head;
-        while (currentNode.next != null)
+        while (currentNode.next != null) // останавливаемся на последнем элементе
             currentNode = currentNode.next;
         currentNode.next = newNode;
-        size++;
+        size++; // добавили ноду и увеличили соответственно размер листа
     }
 
     public boolean remove(int value) {
