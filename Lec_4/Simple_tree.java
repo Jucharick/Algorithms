@@ -31,7 +31,38 @@ package Lec_4;
 import java.util.List;
 
 public class Simple_tree {
-  private Node root;
+  private Node root; // начало дерева, откуда идет расчет
+
+  public boolean containsDepth (int value) {
+    if (root != null) {
+      Node node = containsDepth (value, root);
+      if (node != null) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // 1. Обход в глубину
+  private Node containsDepth (int value, Node node) {
+    if (node.value == value) {
+      return node;
+    } else {
+      for (Node child: node.children) {
+        Node result = containsDepth (value, child);
+        if (result != null) {
+          return result;
+        }
+      }
+    }
+    return null;
+  }
+
+  // 2. Обход в ширину
+  private Node containsWiddth (int value, Node node) {
+
+    return null;
+  }
 
   private class Node {
     private int value;
