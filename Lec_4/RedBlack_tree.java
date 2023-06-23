@@ -4,6 +4,20 @@ import java.util.List;
 
 public class RedBlack_tree {
   private Node root;
+
+  private boolean add(int value) {
+    if (root != null) {
+      boolean result = addNode (root, value);
+      root = rebalance(root);
+      root.color = Color.BLACK; // принудительно меняем цвет на черный
+      return result;
+    } else {
+      root = new Node();
+      root.color = Color.BLACK;
+      root.value = value;
+      return true;
+    }
+  }
   
   private boolean addNode(Node node, int value) { // все ноды уникальные, если создаем такую же - конфликт
     if (node.value == value) {
@@ -53,9 +67,8 @@ public class RedBlack_tree {
         needRebalance = true;
         colorSwap(result);
       }
-    }
-
-    return null;
+    } while (needRebalance);
+    return result;
   }
 
   private Node leftSwap(Node node){
