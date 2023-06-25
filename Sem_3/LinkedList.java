@@ -103,7 +103,7 @@ public class LinkedList {
         return -1;
     }
 
-    private Node getNode(int index) {
+    public Node getNode(int index) {
         if (index < 0 || index >= size)
             throw new IndexOutOfBoundsException();
         Node currentNode = head;
@@ -112,7 +112,7 @@ public class LinkedList {
         return currentNode;
     }
 
-    private int getValue(int index) {
+    public int getValue(int index) {
         if (index < 0 || index >= size)
             throw new IndexOutOfBoundsException();
         Node currentNode = head;
