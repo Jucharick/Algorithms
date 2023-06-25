@@ -5,7 +5,7 @@ import java.util.List;
 public class RedBlack_tree {
   private Node root;
 
-  private boolean add(int value) {
+  public boolean add(int value) {
     if (root != null) {
       boolean result = addNode (root, value);
       root = rebalance(root);
