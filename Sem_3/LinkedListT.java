@@ -1,3 +1,4 @@
+package Sem_3;
 public class LinkedListT<T extends Comparable<T>> {
     private Node head;
     private int size;

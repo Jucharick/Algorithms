@@ -1,3 +1,4 @@
+package Sem_3;
 public class LinkedList {
     private Node head;
     private int size;
