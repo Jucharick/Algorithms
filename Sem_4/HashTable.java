@@ -2,7 +2,7 @@ package Sem_4;
 
 public class HashTable<K, V> {
     private static final int DEFAULT_SIZE = 4;
-    private static final double LOAD_FACTOR = 0.75;
+    private static final double LOAD_FACTOR = 0.75; // коэффициент заполненности таблицы, после чего удваивается
     private int size;
     private Bucket<K, V>[] buckets;
 
