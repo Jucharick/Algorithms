@@ -104,7 +104,7 @@ public class LinkedList {
         return -1;
     }
 
-    public Node getNode(int index) {
+    private Node getNode(int index) {
         if (index < 0 || index >= size)
             throw new IndexOutOfBoundsException();
         Node currentNode = head;
