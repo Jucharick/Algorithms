@@ -14,5 +14,7 @@ public class Main {
     list.revert();
     list.print();
 
+    list.reverse();
+    list.print();
   }
 }
