@@ -70,7 +70,7 @@ public class LinkedList {
         node2.value = temp;
     }
 
-  public void reverse() { // вариант преподавателя
+  public void reverse() { // вариант преподавателя сложность O(n/2)
     for (int i = 0; i < size / 2; i++) {
       swap (i, size - i - 1);
     }
