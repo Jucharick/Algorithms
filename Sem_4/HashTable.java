@@ -19,7 +19,7 @@ public class HashTable<K, V> {
     }
 
     private int calculateIndex(K key) {
-        return Math.abs(key.hashCode() % buckets.length);
+        return Math.abs(key.hashCode() % buckets.length); //  модуль - потому что .hashCode() может вернуть отрицательное значение,% buckets.length - чтоб не выйти за пределы массива
     }
 
     public boolean add(K key, V value) {
